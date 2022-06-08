@@ -1,11 +1,10 @@
 import { fileURLToPath, URL } from "url"
 
-import vue from "@vitejs/plugin-vue"
-import vueJsx from "@vitejs/plugin-vue-jsx"
 import dayjs from "dayjs"
 import { defineConfig, loadEnv } from "vite"
 
 import { wrapperEnv } from "./build/utils"
+import { createVitePlugins } from "./build/vite/plugins"
 import { createProxy } from "./build/vite/proxy"
 import pkg from "./package.json"
 
@@ -36,11 +35,10 @@ export default defineConfig(configEnv => {
       }
     },
     server: {
-      https: isBuild,
       host: true,
       port: VITE_PORT,
       proxy: createProxy(VITE_PROXY)
     },
-    plugins: [vue(), vueJsx()]
+    plugins: createVitePlugins(viteEnv, isBuild)
   }
 })
