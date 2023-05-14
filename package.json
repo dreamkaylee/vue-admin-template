@@ -8,7 +8,6 @@
     "build:prod": "vue-tsc --noEmit -p tsconfig.app.json --composite false && vite build --mode production",
     "preview": "vite preview --port 4173",
     "lint": "eslint \"src/**/*.{js,jsx,vue,ts,tsx}\" --fix",
-    "lint:css": "stylelint **/*.{vue,css,scss,less} --fix --custom-syntax postcss-html",
     "prettier-format": "prettier --config prettier.config.cjs \"src/**/*.{js,jsx,vue,ts,tsx}\" --write",
     "prepare": "husky install",
     "clean": "rimraf node_modules && rimraf package-lock.json"
@@ -48,9 +47,6 @@
     "*.{js,jsx,vue,ts,tsx}": [
       "npm run lint",
       "npm run prettier-format"
-    ],
-    "*.{vue,css,scss,less}": [
-      "npm run lint:css"
     ]
   },
   "config": {
