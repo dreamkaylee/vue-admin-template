@@ -11,8 +11,8 @@ module.exports = {
   },
   extends: [
     'plugin:vue/vue3-essential',
-    'plugin:import/recommended',
     'eslint:recommended',
+    'plugin:import/recommended',
     '@vue/eslint-config-typescript',
     '@vue/eslint-config-prettier/skip-formatting'
   ],
@@ -20,14 +20,12 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx']
+    },
     'import/resolver': {
-      node: {
-        paths: ['./src'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts']
-      },
-      alias: {
-        map: [['@', './src']],
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts']
+      typescript: {
+        alwaysTryTypes: true
       }
     }
   },
