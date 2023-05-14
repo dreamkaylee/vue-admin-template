@@ -11,21 +11,21 @@ module.exports = {
       2,
       'always',
       [
-        'build',
         'feat',
         'fix',
-        'perf',
-        'style',
         'docs',
-        'test',
+        'style',
         'refactor',
+        'perf',
+        'test',
+        'build',
         'ci',
         'chore',
         'revert',
-        'wip',
-        'workflow',
-        'types',
-        'release'
+        'conflict',
+        'font',
+        'delete',
+        'stash'
       ]
     ]
   }

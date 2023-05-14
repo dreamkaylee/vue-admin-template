@@ -9,24 +9,21 @@ module.exports = {
     node: true,
     es6: true
   },
-  parser: 'vue-eslint-parser',
-  parserOptions: {
-    parser: '@typescript-eslint/parser',
-    ecmaVersion: 'latest',
-    sourceType: 'module'
-  },
   extends: [
     'plugin:vue/vue3-essential',
     'plugin:import/recommended',
     'eslint:recommended',
     '@vue/eslint-config-typescript',
-    '@vue/eslint-config-prettier'
+    '@vue/eslint-config-prettier/skip-formatting'
   ],
+  parserOptions: {
+    ecmaVersion: 'latest'
+  },
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
-        paths: ['./src']
+        paths: ['./src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts']
       },
       alias: {
         map: [['@', './src']],
