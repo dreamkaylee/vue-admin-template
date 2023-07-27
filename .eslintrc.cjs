@@ -1,6 +1,6 @@
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution')
-const prettierConfig = require('./prettier.config.cjs')
+const prettierConfig = require('./.prettierrc.cjs')
 
 module.exports = {
   root: true,
